@@ -1,19 +1,19 @@
 var today = moment();
 $('#currentDay').text(today.format("MMMM Do, YYYY"));
 
-var timeNow = $('.time');
-var colorTime = parseInt(moment().format('MMMM Do YYYY, h:mm:ss a'));
+var colorTime = parseInt(document.querySelector('.time').textContent);
+var timeNow = parseInt(moment().format('LT'));
+// parseInt
+
+console.log(colorTime);
+console.log(timeNow);
 
 if (timeNow === colorTime){
-    timeNow.css('background-color', 'red');
-}
-
-if (timeNow < colorTime){
-    timeNow.css('background-color', 'grey');
-}
-
-if (timeNow > colorTime){
-    timeNow.css ('background-color', 'green');
+    $('tr').addClass('present');
+} else if (timeNow < colorTime){
+    $('tr').addClass('past');
+} else if (timeNow > colorTime){
+    $('tr').addClass('future');
 }
 
 
