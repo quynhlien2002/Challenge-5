@@ -4,6 +4,7 @@ $('#currentDay').text(today.format("MMMM Do, YYYY"));
 
 var timeNow = parseInt(moment().format('hh:mm a'));
 
+
 $('.color').each(function(){
     var colorTime = parseInt($(this).children(".time").text());
     if (timeNow === colorTime){
@@ -22,9 +23,22 @@ $('.color').each(function(){
 });
 
 $('.saveBtn').on('click', function(){
-    var listItem = $(this).sibling('td').children('.list-item').value();
+    var listItem = $(this).parent('tr').find('.list-item').val();
     console.log(listItem);
+    $('.list-item').textContent = listItem;
+    localStorage.setItem('listItem', listItem)
 });
+
+if (localStorage(listItem) !== null){
+    var storeData = $('<p>');
+    $('.list-item').append(storeData);
+    storeData.append(listItem).value;
+    
+}
+
+
+
+
 
 
 
