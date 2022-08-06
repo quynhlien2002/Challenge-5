@@ -22,9 +22,9 @@ $('.color').each(function(){
 });
 
 $('.saveBtn').on('click', function(){
-    var listItem = $('.list-item').value;
+    var listItem = $(this).sibling('td').children('.list-item').value();
     console.log(listItem);
-})
+});
 
 
 
