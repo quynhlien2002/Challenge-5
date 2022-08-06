@@ -9,17 +9,36 @@ var timeNow = parseInt(moment().format('H'));
 // console.log(colorTime);
 // console.log(timeNow);
 
-for (i = 0; i < colorTime.length; i++){
-if (timeNow == colorTime){
-    $('tr').addClass('present');
-} else if (timeNow < colorTime){
-    $('tr').addClass('past');
-} else if (timeNow > colorTime){
-    $('tr').addClass('future');
-}
-} 
+// for (i = 0; i < 18; i++){
+// if (timeNow === colorTime){
+//     $("tr").addClass('present');
+//     $
+// } else if (timeNow < colorTime){
+//     $('tr').addClass('past');
+// } else if (timeNow > colorTime){
+//     $('tr').addClass('future');
+// }
+// } 
+
+
+$('#color').each(function(){
+    if (timeNow === colorTime){
+        $(".color").addClass('present');
+        $('.color').removeClass('past');
+        $('.color').removeClass('future');
+    } else if (timeNow < colorTime){
+        $('.color').addClass('past');
+        $('.color').removeClass('present');
+        $('.color').removeClass('future');
+    } else {
+        $('.color').addClass('future');
+        $('.color').removeClass('past');
+        $('.color').removeClass('present');
+    }
+})
 
 console.log(timeNow);
 console.log(colorTime);
+
 
 
