@@ -23,28 +23,33 @@ $('.color').each(function(){
 });
 
 $('.saveBtn').on('click', function(){
-    var listItemSix = $(this).siblings('td').children('.list-item-six').val();
+    var listItemSix = $('.list-item-six').val();
     console.log(listItemSix);
     localStorage.setItem('listItemSix', listItemSix);
-    localStorage.getItem('listItemSix');
-    if ( listItemSix !== null && listItemSix !== undefined){
-    $('.list-item-six').val(listItemSix);
-    };
 
-    var listItemSeven = $(this).siblings('td').children('.list-item-seven').val();
+    localStorage.getItem('listItemSix');
+    if ( six !== null && six !== undefined){
+    $('.list-item-six').val(six);
+
+
+    var listItemSeven = $('.list-item-seven').val();
     console.log(listItemSeven);
     localStorage.setItem('listItemSeven', listItemSeven);
+    };
+
     localStorage.getItem('listItemSeven');
     if ( listItemSeven !== null && listItemSeven !== undefined){
     $('.list-item-seven').val(listItemSeven);
     };
 
-    var listItemEight = $(this).siblings('td').children('.list-item-eight').val();
+    var listItemEight = $('.list-item-eight').val();
     console.log(listItemEight);
     localStorage.setItem('listItemEight', listItemEight);
+
     localStorage.getItem('listItemEight');
     if ( listItemEight !== null){
     $('.list-item-eight').val(listItemEight);
+    
 } 
 });
 
